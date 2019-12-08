@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+        integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <title>Pomodoro Clock</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="start-scene fade">
+            <div class="nav">
+                <button class="edit fas fa-pen"></button>
+            </div>
+            <p>Pomodoro Clock</p>
+            <button class="play fas fa-play"></button>
+        </div>
+
+        <div class="main-scene">
+            <div class="nav">
+                <button class="edit fas fa-pen"></button>
+            </div>
+            <p class="title">Pomodoro Clock</p>
+            <p class="session">Session 1</p>
+            <p class="timer">25:00</p>
+            <div class="controls">
+                <button class="reset fas fa-undo-alt"></button>
+                <button class="pause fas fa-pause"></button>
+                <button class="stop fas fa-stop"></button>
+            </div>
+        </div>
+
+        <div class="settings-scene">
+            <div class="nav">
+                <button class="edit fas fa-times"></button>
+            </div>
+            <p>Pomodoro Setup</p>
+
+            <div class="setting">
+                <span class="setting-title">Session</span>
+                <div class="setting-config">
+                    <button class="session-minus minus fas fa-minus-circle"></button>
+                    <span class="session-value">25</span>
+                    <button class="session-plus plus fas fa-plus-circle"></button>
+                </div>
+
+                <span class="setting-title">Break</span>
+                <div class="setting-config">
+                    <button class="break-minus minus fas fa-minus-circle"></button>
+                    <span class="break-value">5</span>
+                    <button class="break-plus plus fas fa-plus-circle"></button>
+                </div>
+
+                <span class="setting-title">Rest</span>
+                <div class="setting-config">
+                    <button class="rest-minus minus fas fa-minus-circle"></button>
+                    <span class="rest-value">15</span>
+                    <button class="rest-plus plus fas fa-plus-circle"></button>
+                </div>
+
+            </div>
+
+            <button class="adjust">Adjust</button>
+
+            
+
+        </div>
+
+    </div>
+
+    <audio src="sounds/alarm_beep_1.mp3" class="beep-audio"></audio>
+
+    <script src="index.js"></script>
+</body>
+
+</html>

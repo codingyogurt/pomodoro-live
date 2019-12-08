@@ -1,0 +1,201 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+html {
+    height: 100%;
+    color: #3f3f3f;
+    position: relative;
+}
+
+body{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to bottom, #cdcbd8 0%, #a19eb3 100%);
+    /* background: linear-gradient(to bottom, #cdcbd8 0%, #864c4c 100%); */
+
+}
+
+.congrats-fade{
+    height: 100%vh;
+}
+
+.container{
+    background-color: white;
+    width: 334px;
+    height: 422px;
+    margin: auto;
+    border-radius: 17px;
+    margin-top: 100px;
+    box-shadow: 0 4px 50px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    align-items: center;
+    position: relative;
+}
+
+button{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    color: #3f3f3f;
+}
+
+button:focus{
+    outline: none;
+}
+
+.nav{
+    text-align: right;
+
+}
+
+.edit{
+    color: #EE384F;
+    margin-right: 15px;
+    margin-top: 15px;
+    font-size: 1.08em;
+}
+
+/* start scene */
+.start-scene{
+    width: 334px;
+    height: 422px;
+    text-align: center;
+    clear: both;
+    opacity: 0%;
+    transition: opacity 200ms ease;
+
+}
+
+.start-scene p{
+    font-size: 20px;
+    text-align: center;
+    margin-top: 80px;
+    
+}
+
+.play{
+    color: #EE384F;
+    margin-top: 43px;
+    font-size: 59px;
+}
+
+/* main scene */
+.main-scene{
+    text-align: center;
+    opacity: 0%;
+    transition: opacity 200ms ease;
+    top: -500px;
+    left: 0px;
+    width: 334px;
+    height: 422px;  
+    position: absolute;
+}
+
+.main-scene .title{
+    font-size: 20px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.session{
+    margin-top: 50px;
+    font-size: 20px;
+}
+
+.timer{
+    font-size: 60px;
+}
+
+.controls{
+
+    margin-top: 80px;
+    text-align: center;
+}
+
+.reset{
+    color: #EE384F;
+    font-size: 24px;
+    margin: 10px;
+
+}
+
+.pause{
+    color: #EE384F;
+    font-size: 45px;
+    margin: 10px;
+
+}
+
+.stop{
+    color: #EE384F;
+    font-size: 24px;
+    margin: 10px;
+
+}
+
+/* settings scene */
+.settings-scene{
+    opacity: 0%;
+    transition: opacity 200ms ease;
+    top: -1000px;
+    left: 0px;
+    width: 334px;
+    height: 422px;  
+    position: absolute;
+    text-align: center;
+    background-color: white;
+    border-radius: 17px;
+}
+
+.settings-scene p{
+    font-size: 20px;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: block;
+}
+
+.setting{
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: auto auto;
+    font-size: 22px;
+    
+}
+
+.setting .fas{
+    color: #EE384F;
+    font-size: 0.9em;
+}
+
+.setting-title{
+
+    margin-top: 28px;
+}
+
+.setting-config{
+    margin-top: 28px;
+    text-align: right;
+    margin-right: 33px;
+}
+
+.fade{
+    opacity: 100%;
+    top: 0px;
+}
+
+.adjust{
+    margin-top: 40px;
+    background-color: #EE384F;
+    color: white;
+    font-size: 0.9em;
+    padding: 10px 50px;
+    border-radius: 25px;
+}
+
+.adjust:active{
+    opacity: 90%;
+}
