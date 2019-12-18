@@ -1,6 +1,6 @@
 # Pomodoro Clock Live
 
-A Pomodoro Clock timer. Special features are; adjustable time for all 3 sessions (Session, Break, Rest), not so distracting alarm sound, clean UI and UX feel. For more information on what a pomodoro timer is, please go to this [link](https://en.wikipedia.org/wiki/Pomodoro_Technique).
+A Pomodoro Clock timer. Special features are; adjustable time for all 3 sessions (Session, Break, Rest), not so distracting alarm sound, clean UI and UX feel. For more information on what a pomodoro timer is, please go to this [link](https://en.wikipedia.org/wiki/Pomodoro_Technique). https://ryecoder.github.io/pomodoro-live/
 
 ## Getting Started
 
@@ -8,7 +8,7 @@ As this is a simple web app it doesn't need any special installation. Just run t
 
 ### Prerequisites
 
-Clone ths repo, https://github.com/ryecoder/pomodoro-live,
+Clone this repo, https://github.com/ryecoder/pomodoro-live,
 
 ```
 git clone https://github.com/ryecoder/pomodoro-live
