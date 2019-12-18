@@ -1,28 +1,35 @@
+// I refer views as scene got catched to Java programming still
+
+// scene with the big play button
 const startScene = document.querySelector(".start-scene");
+// scene with all the other controls and the main timer
 const mainScene = document.querySelector(".main-scene");
+// scene where we set the time for each session default is 25
 const settingsScene = document.querySelector(".settings-scene");
+
 const playBtn = document.querySelector(".play");
+
+// edit button for each scene. easier for layout.
 const settingsBtnStart = document.querySelector(".start-scene .edit");
 const settingsBtnSettings = document.querySelector(".settings-scene .edit");
 const settingsBtnMain = document.querySelector(".main-scene .edit");
+
 const stopBtn = document.querySelector(".stop");
 const pauseBtn = document.querySelector(".pause");
 const resetBtn = document.querySelector(".reset");
 const adjustBtn = document.querySelector(".adjust");
 const minusBtns = document.querySelectorAll(".minus");
 const plusBtns = document.querySelectorAll(".plus");
+
+// switch variable to monitor if paused button is pressed before any other process
 let switchPause = false;
+
 let currentSession = "";
 let sessionNumber = 0;
+
 const SESSION = "session";
 const BREAK = "break";
 const REST = "rest";
-
-playBtn.addEventListener("click", () => {
-    startTimer();
-    resetAll();
-    showMain();
-});
 
 settingsBtnStart.addEventListener("click", showSettings);
 
@@ -30,40 +37,54 @@ settingsBtnSettings.addEventListener("click", closeSettings);
 
 settingsBtnMain.addEventListener("click", showSettings);
 
+// Starting the timer
+playBtn.addEventListener("click", () => {
+    startTimer();
+    resetAll();
+    showMain();
+});
+
+// stop the timer
 stopBtn.addEventListener("click", () => {
     clearInterval(decrement);
     showStart();
     resetAll();
 });
 
+// pause the timer and toggle pause button
 pauseBtn.addEventListener("click", (e) => {
     const eClassList = e.target.classList;
     updatePauseBtn(eClassList);
 });
 
+// resets the timer back 0 remembering current session
 resetBtn.addEventListener("click", () => {
     initTimerParam(currentSession);
     timer.textContent = secToTimeStr(seconds);
 });
 
+// button in settings. restarts everthing to main screen
 adjustBtn.addEventListener("click", () => {
     clearInterval(decrement);
     showStart();
     resetAll();
 });
 
+// button for minus buttons in settings
 minusBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
         settingChangeValue(btn.nextElementSibling, "minus");
     })
 });
 
+// button for plus buttons in settings
 plusBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
         settingChangeValue(btn.previousElementSibling, "plus");
     })
 });
 
+// resets all states and switch monitoring variables
 function resetAll(){
     sessionNumber = 0;
     initTimerParam(SESSION);
@@ -75,6 +96,7 @@ function resetAll(){
     switchPause = false; // pause
 }
 
+// updates the pause button's icon and at the same time manage the timer
 function updatePauseBtn() {
     const eClassList = pauseBtn.classList;
     eClassList.toggle("fa-pause");
@@ -111,6 +133,7 @@ function showMain() {
     settingsScene.classList.remove("fade");
 }
 
+// updates the value of parameters in settings, depends on what is passed
 function settingChangeValue(valueTarget, method) {
     let currentValue = Number(valueTarget.textContent);
 
@@ -142,10 +165,12 @@ const beepAudio = document.querySelector(".beep-audio");
 let seconds = 0;
 let decrement = true;
 
+// for testing purposes. turning on code is found in initTimerParam function
 function testMode() {
     seconds = 3;
 }
 
+// returns seconds equivalent of a value in the settings. also sets the currentSession variable for monitoring
 function initTimerParam(stringType) {
     switch (stringType) {
         case SESSION:
@@ -166,6 +191,7 @@ function initTimerParam(stringType) {
     return seconds;
 }
 
+// converts seconds to string of time hh:mm:ss. puts 0 on seconds < 10
 function secToTimeStr(sec) {
     let hour = 0, minute = 0;
     hour = Math.floor(sec / 3600);
@@ -181,7 +207,7 @@ function secToTimeStr(sec) {
         `${format(minutes)}:${format(sec)}`;
 }
 
-
+// starts a job (setInterval()) to decrement seconds global variable and display formatted equivalent stops at 0
 function startTimer() {
     
     decrement = setInterval (function(){
@@ -195,6 +221,7 @@ function startTimer() {
 
 }
 
+// updates timer and other variables depending on current session and sessionNumber value. plays sound.
 function sessionMonitorUpdate() {
     // console.log(currentSession + " sesh:" + (sessionNumber));
 
@@ -218,6 +245,7 @@ function sessionMonitorUpdate() {
     beepAudio.play();
 }
 
+// updates session text
 function updateSessionText() {
     if (currentSession === REST) {
         sessionText.textContent = "Congratulations! Please Rest :)";
